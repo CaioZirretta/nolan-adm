@@ -1,0 +1,19 @@
+<section class="login-section">
+  <form class="form-login" [formGroup]="loginForm" (submit)="login($event)">
+    <h1>Log In</h1>
+
+    <label class="form-login-label">
+      Usuário
+      <input id="inputUser" [(ngModel)]="username" formControlName="username">
+    </label>
+
+    <label class="form-login-label">
+      Senha
+      <input id="inputPassword" [(ngModel)]="password" formControlName="password">
+    </label>
+
+    <span class="form-login-error">{{errorMessage}}</span>
+
+    <button class="form-login-button" type="submit">Login</button>
+  </form>
+</section>

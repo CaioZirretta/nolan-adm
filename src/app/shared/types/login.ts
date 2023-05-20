@@ -1,6 +1,6 @@
-export type LoginRequest = {
-  username: string,
-  password: string
+export class LoginRequest {
+  username: string = "";
+  password: string = "";
 }
 
 export type LoginResponse = {

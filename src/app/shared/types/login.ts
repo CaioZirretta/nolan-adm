@@ -5,5 +5,4 @@ export class LoginRequest {
 
 export type LoginResponse = {
   token: string,
-  expirationTime: number;
 }

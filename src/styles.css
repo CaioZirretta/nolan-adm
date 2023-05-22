@@ -2,20 +2,23 @@
 
 :root {
   /* Main Pallete */
-  --main-light-gray: #C5C6D0;
-  --main-white: #FFFFFA;
-  --main-ghost-white: #F8F7FF;
-  --main-cyan: #78CDD7;
-  --main-light-blue: #44A1A0;
-  --main-blue: #247B7B;
-  --main-dark-blue: #0D5C63;
+  --light-gray: #C5C6D0;
+  --white: #FFFFFA;
+  --ghost-white: #F8F7FF;
+  --cyan: #78CDD7;
+  --light-blue: #44A1A0;
+  --blue: #247B7B;
+  --dark-blue: #0D5C63;
 
   /* Secondary Pallete */
-  --main-dark-red: #4f000b;
-  --main-red: #720026;
-  --main-light-red: #ce4257;
-  --main-light-orange: #FF7F51;
-  --main-yellow: #ff9b54;
+  --dark-red: #4f000b;
+  --red: #720026;
+  --light-red: #ce4257;
+  --light-orange: #FF7F51;
+  --yellow: #ff9b54;
+
+  /* Utility Pallete */
+  --gray: #A9A9A9;
 
   --border-radius: 6px;
 }

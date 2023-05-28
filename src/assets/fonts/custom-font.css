@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Tsukimi-Light";
+  src: url("TsukimiRounded-Light.ttf") format('truetype')
+}
+
+@font-face {
+  font-family: "Tsukimi-Medium";
+  src: url("TsukimiRounded-Medium.ttf") format('truetype')
+}
+
+@font-face {
+  font-family: "Tsukimi-Regular";
+  src: url("TsukimiRounded-Regular.ttf") format('truetype')
+}
+
+@font-face {
+  font-family: "Tsukimi-SemiBold";
+  src: url("TsukimiRounded-SemiBold.ttf") format('truetype')
+}
+
+@font-face {
+  font-family: "Tsukimi-Bold";
+  src: url("TsukimiRounded-Bold.ttf") format('truetype')
+}

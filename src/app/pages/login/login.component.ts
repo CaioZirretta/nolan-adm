@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
-import { LoginRequest } from "../../shared/types/login";
 import { AuthService } from "../../shared/services/auth.service";
 import { finalize, tap } from "rxjs";
 import { Router } from "@angular/router";

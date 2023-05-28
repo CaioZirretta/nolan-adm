@@ -1,19 +1,21 @@
 <section class="login-section">
-  <form class="form-login" [formGroup]="loginForm" (submit)="login()">
-    <h1>Log In</h1>
+  <div class="form-login-container">
+    <form class="form-login" [formGroup]="loginForm" (submit)="login()">
+      <h1>Organize suas salas de cinema</h1>
 
-    <label class="form-login-label">
-      Usuário
-      <input id="inputUser" [(ngModel)]="username" formControlName="username">
-    </label>
+      <label class="form-login-label">
+        Usuário
+        <input id="inputUser" [(ngModel)]="username" formControlName="username">
+      </label>
 
-    <label class="form-login-label">
-      Senha
-      <input id="inputPassword" [(ngModel)]="password" formControlName="password">
-    </label>
+      <label class="form-login-label">
+        Senha
+        <input id="inputPassword" [(ngModel)]="password" formControlName="password" type="password">
+      </label>
 
-    <span class="form-login-error">{{errorMessage}}</span>
+      <span class="form-login-error">{{errorMessage}}</span>
 
-    <button class="form-login-button" type="submit">Login</button>
-  </form>
+      <button class="form-login-button" type="submit">Entrar</button>
+    </form>
+  </div>
 </section>

@@ -1,22 +1,29 @@
-.login-section {
-  display: flex;
-  height: 100%;
-  justify-content: space-around;
-  align-items: center;
+/*@font-face {*/
+/*  font-family: "TsukimiRounded";*/
+/*  src: url("../../../assets/fonts/TsukimiRounded-Light.ttf") format('truetype')*/
+/*}*/
 
-  background-color: var(--blue);
+.login-section, input {
+  height: 100%;
 }
 
 .login-section h1 {
   margin: unset;
 }
 
+.form-login-container {
+  width: 50%;
+  height: 100%;
+  background-color: var(--blue);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .form-login {
-  width: 15%;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 6px 0 rgba(0,0,0,0.5);
   padding: 2rem;
   background-color: var(--white);
 }

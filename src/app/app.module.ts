@@ -9,11 +9,13 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { AuthService } from "./shared/services/auth.service";
 import { LoginComponent } from './pages/login/login.component';
 import { HttpClientModule } from "@angular/common/http";
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+    HomeComponent,
   ],
   exports: [],
   imports: [

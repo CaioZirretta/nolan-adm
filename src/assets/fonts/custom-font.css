@@ -22,3 +22,8 @@
   font-family: "Tsukimi-Bold";
   src: url("TsukimiRounded-Bold.ttf") format('truetype')
 }
+
+@font-face {
+  font-family: "VarelaRound-Regular";
+  src: url("VarelaRound-Regular.ttf") format('truetype')
+}

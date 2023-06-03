@@ -1,16 +1,24 @@
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
+<div class="home-container">
+  <h1 class="home-title">Nolan Administração</h1>
+  <mat-tab-group class="container-tab" animationDuration="200ms" dynamicHeight fitInkBarToContent >
+    <mat-tab label="Filmes">
+      <div class="add-movie-container">
+        <button mat-button (click)="addMovie()" class="add-movie-button">Adicionar Filme</button>
+      </div>
+
+      <div class="movies-container">
+        <movie-card title="lorem ipsum" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+        <movie-card title="Venom" imageSrc="https://img.elo7.com.br/product/zoom/2368C5D/big-poster-filme-marvel-venom-tamanho-90x60-cm-loot-op-010-geek.jpg" />
+      </div>
+    </mat-tab>
+    <mat-tab label="Salas"> Salas com os filmes</mat-tab>
+  </mat-tab-group>
+</div>

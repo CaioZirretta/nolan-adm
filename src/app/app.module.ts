@@ -16,6 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from "@angular/material/dialog";
 import { NewMovieDialogComponent } from './shared/components/new-movie-dialog/new-movie-dialog.component';
 import { MatButtonModule } from "@angular/material/button";
+import { EditMovieDialogComponent } from './shared/components/edit-movie-dialog/edit-movie-dialog.component';
+import { DeleteMovieDialogComponent } from './shared/components/delete-movie-dialog/delete-movie-dialog.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { MatButtonModule } from "@angular/material/button";
     HomeComponent,
     MovieCardComponent,
     NewMovieDialogComponent,
+    EditMovieDialogComponent,
+    DeleteMovieDialogComponent,
   ],
   exports: [],
   imports: [

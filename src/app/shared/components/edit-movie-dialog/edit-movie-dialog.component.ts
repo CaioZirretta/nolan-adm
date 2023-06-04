@@ -1,34 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { MatDialogRef } from "@angular/material/dialog";
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
 import { MovieService } from "../../services/movie.service";
 import { Movie } from "../../types/Movie";
-import { catchError, finalize, tap, throwError } from "rxjs";
-import { HttpStatusCode } from "@angular/common/http";
+import { catchError, throwError } from "rxjs";
 import { Message } from "../../enums/Message";
 import { UpdateMovieListService } from "../../services/update-movie-list.service";
 
 @Component({
-  selector: 'new-movie-dialog',
-  templateUrl: './new-movie-dialog.component.html',
-  styleUrls: ['./new-movie-dialog.component.css']
+  selector: 'app-edit-movie-dialog',
+  templateUrl: './edit-movie-dialog.component.html',
+  styleUrls: ['./edit-movie-dialog.component.css']
 })
-export class NewMovieDialogComponent implements OnInit {
+export class EditMovieDialogComponent implements OnInit {
   public movieForm: FormGroup;
   public errorMessage: string;
 
   constructor(private formBuilder: FormBuilder,
+              private movieService: MovieService,
               private updateMovieListService: UpdateMovieListService,
-              public dialogRef: MatDialogRef<NewMovieDialogComponent>,
-              private movieService: MovieService) {
+              public dialogRef: MatDialogRef<EditMovieDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public movie: Movie) {
   }
 
   ngOnInit() {
     this.movieForm = this.formBuilder.group({
-      name: ['sad', [Validators.required]],
-      synopis: ['asd', [Validators.required]],
-      synopsisExpanded: ['ads', [Validators.required]],
-      banner: ['', [Validators.required]],
+      name: [this.movie.name, [Validators.required]],
+      synopis: [this.movie.synopsis, [Validators.required]],
+      synopsisExpanded: [this.movie.synopsis_expanded, [Validators.required]],
+      banner: [this.movie.banner, [Validators.required]],
     });
   }
 
@@ -44,25 +44,22 @@ export class NewMovieDialogComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  addMovie() {
+  editMovie() {
     this.errorMessage = "";
 
     const movie: Movie = {
+      id: this.movie.id,
       name: this.movieForm.controls['name'].value,
       synopsis: this.movieForm.controls['synopis'].value,
       synopsis_expanded: this.movieForm.controls['synopsisExpanded'].value,
       banner: this.movieForm.controls['banner'].value,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
     };
 
-    console.log(movie);
-
-    this.movieService.add(movie).pipe(
+    this.movieService.edit(movie).pipe(
       catchError(error => {
         console.log(error);
 
-        // Adicionar verificação para tamanho de arquivo
+        // Adicionar verificação para resposta sobre tamanho de arquivo
         if(error.status === 0) {
           this.errorMessage = Message.API_COMMUNICATION_ERROR;
         } else {

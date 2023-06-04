@@ -28,7 +28,11 @@ export class MovieService {
     return this.httpClient.post<Movie>(this.url, movie, this.headers);
   }
 
+  edit(movie: Movie): Observable<any> {
+    return this.httpClient.put<Movie>(this.url, movie, this.headers);
+  }
+
   remove(id: string): Observable<any> {
-    return this.httpClient.delete<any>(this.url + '/' + id, this.headers);
+    return this.httpClient.delete<any>(`${this.url}/${id}`, this.headers);
   }
 }

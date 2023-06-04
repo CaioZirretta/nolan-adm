@@ -4,6 +4,6 @@ export type Movie = {
   synopsis: string,
   synopsis_expanded: string,
   banner: string
-  createdAt: string,
-  updatedAt: string
+  createdAt?: string,
+  updatedAt?: string
 }

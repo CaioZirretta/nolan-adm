@@ -1,0 +1,8 @@
+<h2 class="new-movie-title" mat-dialog-title>Remover filme</h2>
+<mat-dialog-content class="mat-typography">
+  Tem certeza de que deseja remover {{data.name}}?
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="deleteMovie()" cdkFocusInitial>Confirmar</button>
+  <button mat-button (click)="cancel()">Cancelar</button>
+</mat-dialog-actions>

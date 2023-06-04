@@ -10,7 +10,7 @@
 
       <div class="movies-container">
         <div *ngFor="let movie of movieList;">
-          <movie-card [title]=movie.name [imageSrc]=movie.banner />
+          <movie-card class="movies-container-item" [movie]="movie" />
         </div>
       </div>
     </mat-tab>

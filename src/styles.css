@@ -27,7 +27,7 @@ html, body {
 }
 
 body {
-  margin: 4rem 8rem 0;
+  margin: 2rem 8rem 0;
   font-family: "VarelaRound-Regular", sans-serif !important;
   background-image: url("/assets/img/home-background.jpg");
   background-repeat: no-repeat;

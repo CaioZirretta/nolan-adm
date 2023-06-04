@@ -2,29 +2,47 @@
   background-color: var(--white);
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  margin: 0.5rem;
+  transition: outline-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.card-container:hover {
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-shadow: 0 0 8px 0 var(--dark-red);
 }
 
 .card-image {
   object-fit: cover;
   width: 100%;
   max-height: 100%;
-  border-radius: var(--border-radius);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
-.card-info{
-  display:flex;
+.card-info {
+  height: 2rem;
+  display: flex;
   justify-content: space-between;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-bottom: 1rem;
+  padding: 1rem 1rem 0;
   align-items: center;
 }
 
 .card-title {
+  display: flex;
   font-weight: bold;
-  width: 75%;
+  word-wrap: anywhere;
+  overflow: scroll;
+  text-align: center;
+  cursor: default;
+}
+
+.card-actions {
+  display: flex;
+  gap: .25rem;
+  position: relative;
+  justify-content: flex-end;
+  padding: 0 1rem 1rem;
 }
 
 .card-button {
@@ -46,6 +64,19 @@
   transition: all .1s;
 }
 
-.mat-icon{
-  font-size: 2rem;
+@media screen and (max-width: 1918px) {
+  .card-title {
+    font-size: 0.75rem;
+  }
+
+  .mat-icon {
+    font-size: .75rem;
+  }
 }
+
+@media screen and (min-width: 1919px) {
+  .mat-icon {
+    font-size: 1.5rem;
+  }
+}
+

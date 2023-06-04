@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { Pages } from "./shared/enums/Pages";
 import { LoginComponent } from "./pages/login/login.component";
 import { HomeComponent } from "./pages/home/home.component";
-import { AuthGuard } from "./pages/auth.guard";
+import { AuthGuard } from "./shared/infra/auth.guard";
 
 const routes: Routes = [
   {
     path: Pages.LOGIN,
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: "",

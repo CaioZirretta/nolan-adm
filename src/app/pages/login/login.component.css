@@ -4,8 +4,6 @@
 /*}*/
 
 .login-section {
-  background-image: url("/assets/img/login-background.jpg");
-  background-size: cover;
 }
 
 .login-section {
@@ -16,6 +14,7 @@
 }
 
 .form-login-container {
+  border-radius: var(--border-radius);
   width: 50%;
   background-color: var(--white);
   display: flex;

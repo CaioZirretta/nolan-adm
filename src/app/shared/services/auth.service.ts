@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
-import { LoginResponse } from "../types/login";
+import { LoginResponse } from "../types/Login";
 import { CookieService } from "ngx-cookie-service";
+import jwtDecode from 'jwt-decode';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +25,15 @@ export class AuthService {
 
   isAuthenticated(): boolean {
     const token: string = this.cookieService.get('token');
+
+    if(token) {
+      const decodedToken: any = jwtDecode(token);
+      const currentTimestamp: number = Math.floor(Date.now() / 1000);
+
+      if(decodedToken.exp && decodedToken.exp < currentTimestamp) {
+        return false;
+      }
+    }
 
     return !!token;
   }

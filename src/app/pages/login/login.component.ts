@@ -3,10 +3,8 @@ import { FormBuilder, FormGroup } from "@angular/forms";
 import { AuthService } from "../../shared/services/auth.service";
 import { catchError, finalize, tap, throwError } from "rxjs";
 import { Router } from "@angular/router";
-import { Pages } from "../../shared/enums/Pages";
 import { CookieService } from "ngx-cookie-service";
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { Animation } from "../../shared/services/animation.service";
 
 
 @Component({
@@ -14,14 +12,19 @@ import { Animation } from "../../shared/services/animation.service";
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   animations: [
-    Animation.fadeIn
+    trigger('fadeIn', [
+      state('void', style({ opacity: 0 })),
+      transition(':enter, :leave', [
+        animate(`300ms cubic-bezier(0.645, 0.045, 0.355, 1)`, style({ opacity: 1 }))
+      ])
+    ])
   ]
 })
 export class LoginComponent implements OnInit {
+  // TODO Reformular formulário, usar o de inserir Filmes como exemplo
   username: string = "";
   password: string = "";
   errorMessage: string = "";
-  // @ts-ignore
   loginForm: FormGroup;
 
   constructor(private elementRef: ElementRef,

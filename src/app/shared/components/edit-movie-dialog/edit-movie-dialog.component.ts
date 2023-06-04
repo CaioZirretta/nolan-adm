@@ -57,8 +57,6 @@ export class EditMovieDialogComponent implements OnInit {
 
     this.movieService.edit(movie).pipe(
       catchError(error => {
-        console.log(error);
-
         // Adicionar verificação para resposta sobre tamanho de arquivo
         if(error.status === 0) {
           this.errorMessage = Message.API_COMMUNICATION_ERROR;

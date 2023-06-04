@@ -30,12 +30,9 @@ export class DeleteMovieDialogComponent implements OnInit{
     this.errorMessage = "";
 
     const movieId: string = this.data.id!
-    console.log(movieId)
 
     this.movieService.remove(movieId).pipe(
       catchError(error => {
-        console.log(error);
-
         // Adicionar verificação para resposta sobre tamanho de arquivo
         if(error.status === 0) {
           this.errorMessage = Message.API_COMMUNICATION_ERROR;

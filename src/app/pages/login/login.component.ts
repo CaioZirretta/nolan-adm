@@ -54,7 +54,6 @@ export class LoginComponent implements OnInit {
 
     this.authService.login(this.username, this.password).pipe(
       tap(response => {
-        console.log(response);
         this.cookieService.set("token", response.token);
       }),
       catchError((error: any) => {

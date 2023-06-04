@@ -56,12 +56,8 @@ export class NewMovieDialogComponent implements OnInit {
       updatedAt: new Date().toISOString(),
     };
 
-    console.log(movie);
-
     this.movieService.add(movie).pipe(
       catchError(error => {
-        console.log(error);
-
         // Adicionar verificação para tamanho de arquivo
         if(error.status === 0) {
           this.errorMessage = Message.API_COMMUNICATION_ERROR;

@@ -5,12 +5,7 @@
   height: 100%;
 }
 
-.home-title {
-}
-
-.container-tab {
-}
-
+/* Filmes */
 .add-movie-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -56,3 +51,9 @@
 .movies-container::-webkit-scrollbar{
   width: 12px;
 }
+
+/* Salas */
+.teste{
+  /* estilização funciona aqui */
+}
+

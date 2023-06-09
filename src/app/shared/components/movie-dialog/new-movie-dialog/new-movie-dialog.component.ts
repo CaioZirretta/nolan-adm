@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef } from "@angular/material/dialog";
-import { MovieService } from "../../services/movie.service";
-import { Movie } from "../../types/Movie";
+import { MovieService } from "../../../services/movie.service";
+import { Movie } from "../../../types/Movie";
 import { catchError, finalize, tap, throwError } from "rxjs";
 import { HttpStatusCode } from "@angular/common/http";
-import { Message } from "../../enums/Message";
-import { UpdateMovieListService } from "../../services/update-movie-list.service";
+import { Message } from "../../../enums/Message";
+import { UpdateMovieListService } from "../../../services/update-movie-list.service";
 
 @Component({
   selector: 'new-movie-dialog',

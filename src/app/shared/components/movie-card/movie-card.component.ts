@@ -1,9 +1,9 @@
 import { Component, ElementRef, Input } from '@angular/core';
 import { Animation } from "../../services/animation.service";
 import { Movie } from "../../types/Movie";
-import { EditMovieDialogComponent } from "../edit-movie-dialog/edit-movie-dialog.component";
+import { EditMovieDialogComponent } from "../movie-dialog/edit-movie-dialog/edit-movie-dialog.component";
 import { MatDialog } from "@angular/material/dialog";
-import { DeleteMovieDialogComponent } from "../delete-movie-dialog/delete-movie-dialog.component";
+import { DeleteMovieDialogComponent } from "../movie-dialog/delete-movie-dialog/delete-movie-dialog.component";
 
 @Component({
   selector: 'movie-card',

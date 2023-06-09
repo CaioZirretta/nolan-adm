@@ -14,10 +14,11 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { MovieCardComponent } from './shared/components/movie-card/movie-card.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from "@angular/material/dialog";
-import { NewMovieDialogComponent } from './shared/components/new-movie-dialog/new-movie-dialog.component';
+import { NewMovieDialogComponent } from './shared/components/movie-dialog/new-movie-dialog/new-movie-dialog.component';
 import { MatButtonModule } from "@angular/material/button";
-import { EditMovieDialogComponent } from './shared/components/edit-movie-dialog/edit-movie-dialog.component';
-import { DeleteMovieDialogComponent } from './shared/components/delete-movie-dialog/delete-movie-dialog.component';
+import { EditMovieDialogComponent } from './shared/components/movie-dialog/edit-movie-dialog/edit-movie-dialog.component';
+import { DeleteMovieDialogComponent } from './shared/components/movie-dialog/delete-movie-dialog/delete-movie-dialog.component';
+import { MatExpansionModule } from "@angular/material/expansion";
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { DeleteMovieDialogComponent } from './shared/components/delete-movie-dia
     MatTabsModule,
     MatIconModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule
   ],
   providers: [
     AuthService

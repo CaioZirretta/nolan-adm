@@ -1,10 +1,8 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { MatDialog } from "@angular/material/dialog";
-import { NewMovieDialogComponent } from "../../shared/components/new-movie-dialog/new-movie-dialog.component";
+import { NewMovieDialogComponent } from "../../shared/components/movie-dialog/new-movie-dialog/new-movie-dialog.component";
 import { Movie } from "../../shared/types/Movie";
 import { MovieService } from "../../shared/services/movie.service";
-import { ActivatedRoute } from "@angular/router";
-import { EditMovieDialogComponent } from "../../shared/components/edit-movie-dialog/edit-movie-dialog.component";
 import { UpdateMovieListService } from "../../shared/services/update-movie-list.service";
 
 @Component({

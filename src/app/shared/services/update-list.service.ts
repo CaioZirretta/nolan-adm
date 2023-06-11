@@ -3,7 +3,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class UpdateMovieListService {
+export class UpdateListService {
   public updateList:EventEmitter<void> = new EventEmitter<void>()
   constructor() { }
 }

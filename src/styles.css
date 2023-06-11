@@ -9,16 +9,22 @@
   --dark-red: #4f000b;
   --red: #720026;
   --light-red: #ce4257;
+  --pale-red: #f16b7c;
   --light-orange: #FF7F51;
   --yellow: #ff9b54;
 
   /* Utility Pallete */
   --gray: #A9A9A9;
   --light-gray: #C5C6D0;
+  --extra-light-gray: #E3E4EB;
+  --pale-gray: #F1F2F6;
+  --off-white: #FCFCFC;
   --white: #FFFFFA;
   --ghost-white: #F8F7FF;
 
   --border-radius: 6px;
+
+  --cubic-bezier: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 html, body {
@@ -93,3 +99,9 @@ button {
 }
 
 .cdk-overlay-container:empty { display: none }
+
+/* Tab */
+
+.mat-expansion-panel-body{
+  padding-bottom: 0;
+}

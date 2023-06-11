@@ -3,10 +3,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MatDialogRef } from "@angular/material/dialog";
 import { MovieService } from "../../../services/movie.service";
 import { Movie } from "../../../types/Movie";
-import { catchError, finalize, tap, throwError } from "rxjs";
-import { HttpStatusCode } from "@angular/common/http";
+import { catchError, throwError } from "rxjs";
 import { Message } from "../../../enums/Message";
-import { UpdateMovieListService } from "../../../services/update-movie-list.service";
+import { UpdateListService } from "../../../services/update-list.service";
 
 @Component({
   selector: 'new-movie-dialog',
@@ -18,21 +17,21 @@ export class NewMovieDialogComponent implements OnInit {
   public errorMessage: string;
 
   constructor(private formBuilder: FormBuilder,
-              private updateMovieListService: UpdateMovieListService,
+              private updateListService: UpdateListService,
               public dialogRef: MatDialogRef<NewMovieDialogComponent>,
               private movieService: MovieService) {
   }
 
   ngOnInit() {
     this.movieForm = this.formBuilder.group({
-      name: ['sad', [Validators.required]],
-      synopis: ['asd', [Validators.required]],
-      synopsisExpanded: ['ads', [Validators.required]],
+      name: ['teste', [Validators.required]],
+      synopis: ['teste', [Validators.required]],
+      synopsisExpanded: ['teste', [Validators.required]],
       banner: ['', [Validators.required]],
     });
   }
 
-  onFileSelected(event: any){
+  protected onFileSelected(event: any) {
     const file: File = event.target.files[0];
     const reader = new FileReader();
 
@@ -44,7 +43,7 @@ export class NewMovieDialogComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  addMovie() {
+  protected addMovie() {
     this.errorMessage = "";
 
     const movie: Movie = {
@@ -59,7 +58,7 @@ export class NewMovieDialogComponent implements OnInit {
     this.movieService.add(movie).pipe(
       catchError(error => {
         // Adicionar verificação para tamanho de arquivo
-        if(error.status === 0) {
+        if (error.status === 0) {
           this.errorMessage = Message.API_COMMUNICATION_ERROR;
         } else {
           this.errorMessage = error.message;
@@ -67,13 +66,13 @@ export class NewMovieDialogComponent implements OnInit {
         return throwError(error);
       })
     ).subscribe((response) => {
-      this.updateMovieListService.updateList.emit();
+      this.updateListService.updateList.emit();
       this.dialogRef.close();
       this.movieForm.reset();
     });
   }
 
-  cancel() {
+  protected cancel() {
     this.dialogRef.close();
     this.movieForm.reset();
   }

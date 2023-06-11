@@ -5,7 +5,7 @@ import { MovieService } from "../../../services/movie.service";
 import { Movie } from "../../../types/Movie";
 import { catchError, throwError } from "rxjs";
 import { Message } from "../../../enums/Message";
-import { UpdateMovieListService } from "../../../services/update-movie-list.service";
+import { UpdateListService } from "../../../services/update-list.service";
 
 @Component({
   selector: 'app-edit-movie-dialog',
@@ -18,7 +18,7 @@ export class EditMovieDialogComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private movieService: MovieService,
-              private updateMovieListService: UpdateMovieListService,
+              private updateListService: UpdateListService,
               public dialogRef: MatDialogRef<EditMovieDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public movie: Movie) {
   }
@@ -32,7 +32,7 @@ export class EditMovieDialogComponent implements OnInit {
     });
   }
 
-  onFileSelected(event: any){
+  protected onFileSelected(event: any){
     const file: File = event.target.files[0];
     const reader = new FileReader();
 
@@ -44,7 +44,7 @@ export class EditMovieDialogComponent implements OnInit {
     reader.readAsDataURL(file);
   }
 
-  editMovie() {
+  protected editMovie() {
     this.errorMessage = "";
 
     const movie: Movie = {
@@ -66,13 +66,13 @@ export class EditMovieDialogComponent implements OnInit {
         return throwError(error);
       })
     ).subscribe((response) => {
-      this.updateMovieListService.updateList.emit();
+      this.updateListService.updateList.emit();
       this.dialogRef.close();
       this.movieForm.reset();
     });
   }
 
-  cancel() {
+  protected cancel() {
     this.dialogRef.close();
     this.movieForm.reset();
   }

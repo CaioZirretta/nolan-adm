@@ -20,7 +20,7 @@ export class MovieCardComponent {
               private elementRef: ElementRef) {
   }
 
-  editMovie(movie: Movie) {
+  protected editMovie(movie: Movie) {
     const dialogRef = this.dialog.open(EditMovieDialogComponent, {
       data: movie
     });
@@ -31,7 +31,7 @@ export class MovieCardComponent {
     });
   }
 
-  deleteMovie(movie: Movie) {
+  protected deleteMovie(movie: Movie) {
     const dialogRef = this.dialog.open(DeleteMovieDialogComponent, {
       data: { id: movie.id }
     });

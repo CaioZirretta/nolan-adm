@@ -39,11 +39,11 @@ input[type="file"] {
   width: 74%;
   cursor: pointer;
   text-align: center;
-  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s var(--cubic-bezier);
 }
 
 .form-banner:hover {
-  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s var(--cubic-bezier);
   color: var(--white);
   background-color: var(--dark-red);
 }

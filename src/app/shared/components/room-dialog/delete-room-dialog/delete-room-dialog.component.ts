@@ -1,21 +1,20 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
-import { MovieService } from "../../../services/movie.service";
+import { UpdateListService } from "../../../services/update-list.service";
 import { catchError, throwError } from "rxjs";
 import { Message } from "../../../enums/Message";
-import { UpdateListService } from "../../../services/update-list.service";
+import { RoomService } from "../../../services/room.service";
 
 @Component({
-  selector: 'app-delete-movie-dialog',
-  templateUrl: './delete-movie-dialog.component.html',
-  styleUrls: ['./delete-movie-dialog.component.css']
+  selector: 'app-delete-room-dialog',
+  templateUrl: './delete-room-dialog.component.html',
+  styleUrls: ['./delete-room-dialog.component.css']
 })
-export class DeleteMovieDialogComponent implements OnInit{
+export class DeleteRoomDialogComponent implements OnInit{
   public errorMessage: string;
 
-  constructor(public dialogRef: MatDialogRef<DeleteMovieDialogComponent>,
-              private movieService: MovieService,
+  constructor(public dialogRef: MatDialogRef<DeleteRoomDialogComponent>,
+              private roomService: RoomService,
               private updateListService: UpdateListService,
               @Inject(MAT_DIALOG_DATA) public data: any) {
   }
@@ -23,12 +22,12 @@ export class DeleteMovieDialogComponent implements OnInit{
   ngOnInit() {
   }
 
-  protected deleteMovie() {
+  deleteMovie() {
     this.errorMessage = "";
 
-    const movieId: string = this.data.id!
+    const roomId: string = this.data.id!
 
-    this.movieService.remove(movieId).pipe(
+    this.roomService.remove(roomId).pipe(
       catchError(error => {
         // Adicionar verificação para resposta sobre tamanho de arquivo
         if(error.status === 0) {
@@ -44,7 +43,7 @@ export class DeleteMovieDialogComponent implements OnInit{
     });
   }
 
-  protected cancel() {
+  cancel() {
     this.dialogRef.close();
   }
 }

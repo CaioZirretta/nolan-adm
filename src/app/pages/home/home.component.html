@@ -1,37 +1,60 @@
 <div class="home-container">
   <h1 class="home-title">Nolan Administração</h1>
 
-  <mat-tab-group class="container-tab" animationDuration="200ms" dynamicHeight fitInkBarToContent >
+  <mat-tab-group (selectedTabChange)="updateAllLists()" class="container-tab" animationDuration="200ms" dynamicHeight
+                 fitInkBarToContent>
 
-    <mat-tab label="Filmes">
-      <div class="add-movie-container">
-        <button (click)="addMovie()" class="add-movie-button">Adicionar Filme</button>
-      </div>
+    <!--    <mat-tab label="Filmes">-->
+    <!--      <div class="add-container">-->
+    <!--        <button (click)="addMovie()" class="add-button">Adicionar Filme</button>-->
+    <!--      </div>-->
 
-      <div class="movies-container">
-        <div *ngFor="let movie of movieList;">
-          <movie-card class="movies-container-item" [movie]="movie" />
-        </div>
-      </div>
-    </mat-tab>
+    <!--      <div class="movies-container">-->
+    <!--        <div *ngFor="let movie of movieList;">-->
+    <!--          <movie-card class="movies-container-item" [movie]="movie"/>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--    </mat-tab>-->
 
     <mat-tab label="Salas">
-      <mat-expansion-panel class="teste">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            This is the expansion title
-          </mat-panel-title>
-          <mat-panel-description>
-            This is a summary of the content
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>This is the primary content of the panel.</p>
-      </mat-expansion-panel>
+      <div class="add-container">
+        <button (click)="addRoom()" class="add-button">Adicionar Sala</button>
+      </div>
+
+      <div class="rooms-container">
+        <mat-expansion-panel class="room-info-container" *ngFor="let room of roomWithSessionList;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="room-title">Sala {{room.number}}</span>
+            </mat-panel-title>
+            <mat-panel-description class="room-container-description">
+              <mat-icon fontIcon="delete" class="room-option-button" (click)="deleteRoom(room)"/>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+
+          <ng-container class="sessions-container" *ngIf="!isSessionlessRoom(room);else no_sessions_content">
+            <div class="sessions" *ngFor="let session of room.sessions">
+              <div class="session-info">
+                {{formatDateToView(session.time)}}
+              </div>
+              <div class="session-info">
+                {{session.movieName}}
+              </div>
+              <mat-icon class="session-option-button" (click)="editSession(session)" fontIcon="edit" />
+              <mat-icon class="session-option-button" (click)="deleteSession(session)" fontIcon="delete" />
+            </div>
+          </ng-container>
+          <ng-template #no_sessions_content>
+            <div class="no-sessions-found"> Nenhuma sessão encontrada</div>
+          </ng-template>
+        </mat-expansion-panel>
+      </div>
+
     </mat-tab>
 
-    <mat-tab label="Sessões">
-      Salas com os filmes
-    </mat-tab>
+    <!--    <mat-tab label="Sessões">-->
+    <!--      Salas com os filmes-->
+    <!--    </mat-tab>-->
 
   </mat-tab-group>
 </div>

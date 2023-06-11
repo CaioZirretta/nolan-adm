@@ -6,29 +6,30 @@
 }
 
 /* Filmes */
-.add-movie-container {
+.add-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-column-gap: .5rem;
   margin: 0 0 2rem 0;
 }
 
-.add-movie-button {
-  font-size: 1rem;
-  color: var(--white);
+.add-button {
+  font-size: 1.25rem;
+  color: var(--light-gray);
+  padding: .25rem;
   grid-area: 1 / 8 / 2 / 11;
-  padding: .75rem 2rem;
-  background: linear-gradient(90deg, rgba(79, 0, 11, 1) 20%, rgba(206, 66, 87, 1) 100%);
+  background-color: var(--white);
   border-radius: var(--border-radius);
-  border: none;
+  border: 2px solid var(--light-gray);
   cursor: pointer;
-  transition: all .2s;
+  transition: all .1s var(--cubic-bezier);
   height: 4rem;
 }
 
-.add-movie-button:hover {
-  transition: all .2s;
-  box-shadow: 0 0 8px 0 var(--red);
+.add-button:hover {
+  color: var(--dark-red);
+  border: 2px solid var(--dark-red);
+  transition: all .1s var(--cubic-bezier);
 }
 
 .mat-icon {
@@ -48,12 +49,87 @@
   overflow-y: scroll;
 }
 
-.movies-container::-webkit-scrollbar{
+.movies-container::-webkit-scrollbar {
   width: 12px;
 }
 
 /* Salas */
-.teste{
-  /* estilização funciona aqui */
+.rooms-container {
+  height: calc(100vh - 22rem);
+  overflow-y: scroll;
 }
 
+.room-info-container {
+  margin: .25rem .5rem 1rem .25rem;
+  box-shadow: 0 0 2px 1px var(--light-gray);
+  border-radius: var(--border-radius);
+  padding: 1rem .5rem;
+  transition: background-color .2s var(--cubic-bezier);
+}
+
+.room-info-container:hover {
+  transition: background-color .2s var(--cubic-bezier);
+  background-color: var(--pale-gray);
+}
+
+.room-title {
+  font-size: 1.5rem;
+}
+
+.room-container-description {
+  display: flex;
+  flex-direction: row;
+}
+
+.room-option-button,
+.session-option-button{
+  height: fit-content;
+  width: fit-content;
+  font-size: 2rem;
+  color: var(--light-gray);
+  padding: .25rem;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--light-gray);
+  cursor: pointer;
+  transition: all .1s var(--cubic-bezier);
+}
+
+.room-option-button:hover,
+.session-option-button:hover{
+  color: var(--dark-red);
+  border: 2px solid var(--dark-red);
+  transition: all .1s var(--cubic-bezier);
+}
+
+/* Sessões */
+
+.sessions:not(:last-child){
+  margin-bottom: .5rem
+}
+
+.sessions:nth-child(1){
+  margin-top: 1rem;
+}
+
+.sessions{
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.session-info{
+  background-color: var(--white);
+  border: 2px solid var(--light-gray);
+  padding: .5rem;
+  border-radius: var(--border-radius);
+  cursor: default;
+}
+
+.session-option-button {
+  font-size: 1.75rem;
+}
+
+.no-sessions-found {
+  margin-top: 1rem;
+}

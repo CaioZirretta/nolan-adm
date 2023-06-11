@@ -4,12 +4,12 @@
   flex-direction: column;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
   margin: 0.5rem;
-  transition: outline-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: outline-color 0.2s var(--cubic-bezier);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .card-container:hover {
-  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.2s var(--cubic-bezier);
   box-shadow: 0 0 8px 0 var(--dark-red);
 }
 
@@ -23,7 +23,7 @@
 .card-info {
   height: 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 1rem 1rem 0;
   align-items: center;
 }
@@ -45,7 +45,7 @@
   padding: 0 1rem 1rem;
 }
 
-.card-button {
+.room-option-button {
   color: var(--red);
   height: fit-content;
   width: fit-content;
@@ -57,7 +57,7 @@
   transition: all .1s;
 }
 
-.card-button:hover {
+.room-option-button:hover {
   color: var(--white);
   background-color: var(--red);
   border: 2px solid rgba(0, 0, 0, 0);

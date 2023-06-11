@@ -19,6 +19,8 @@ import { MatButtonModule } from "@angular/material/button";
 import { EditMovieDialogComponent } from './shared/components/movie-dialog/edit-movie-dialog/edit-movie-dialog.component';
 import { DeleteMovieDialogComponent } from './shared/components/movie-dialog/delete-movie-dialog/delete-movie-dialog.component';
 import { MatExpansionModule } from "@angular/material/expansion";
+import { DeleteRoomDialogComponent } from './shared/components/room-dialog/delete-room-dialog/delete-room-dialog.component';
+import { NewRoomDialogComponent } from './shared/components/room-dialog/new-room-dialog/new-room-dialog.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import { MatExpansionModule } from "@angular/material/expansion";
     NewMovieDialogComponent,
     EditMovieDialogComponent,
     DeleteMovieDialogComponent,
+    DeleteRoomDialogComponent,
+    NewRoomDialogComponent,
   ],
   exports: [],
   imports: [

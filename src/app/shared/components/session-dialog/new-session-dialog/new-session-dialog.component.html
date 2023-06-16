@@ -1,0 +1,20 @@
+<h2 class="new-session-title" mat-dialog-title>Adicionar nova sessão</h2>
+<mat-dialog-content class="mat-typography">
+  <form class="new-session-form" [formGroup]="sessionForm">
+    <div class="input-container">
+      Filme:
+      <select class="form-movie-name" formControlName="movieName" type="text">
+        <option *ngFor="let movie of movieList" value="{{movie.name}}">{{movie.name}}</option>
+      </select>
+    </div>
+    <div class="input-container">
+      Data:
+      <input class="form-date" formControlName="time" type="datetime-local" >
+    </div>
+    <span class="form-error">{{errorMessage}}</span>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button [disabled]="!sessionForm.valid" mat-button (click)="addSession()" cdkFocusInitial>Criar</button>
+  <button mat-button (click)="cancel()">Cancelar</button>
+</mat-dialog-actions>

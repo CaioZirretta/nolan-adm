@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Movie } from "../types/Movie";
+import { Movie, MovieIdName } from "../types/Movie";
 import { Observable } from "rxjs";
 import { CookieService } from "ngx-cookie-service";
 
@@ -22,6 +22,10 @@ export class MovieService {
 
   list(): Observable<Movie[]> {
     return this.httpClient.get<Movie[]>(this.url, this.headers);
+  }
+
+  listIdName(): Observable<MovieIdName[]>{
+    return this.httpClient.get<MovieIdName[]>(this.url + "/idName", this.headers);
   }
 
   add(movie: Movie): Observable<any> {

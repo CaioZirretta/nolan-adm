@@ -7,3 +7,8 @@ export type Movie = {
   createdAt?: string,
   updatedAt?: string
 }
+
+export type MovieIdName = {
+  id: string,
+  name: string,
+}

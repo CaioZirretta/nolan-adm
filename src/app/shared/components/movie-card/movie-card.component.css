@@ -4,19 +4,19 @@
   flex-direction: column;
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
   margin: 0.5rem;
-  transition: outline-color 0.2s var(--cubic-bezier);
   border-radius: var(--border-radius) var(--border-radius) 0 0;
+  transition: all 0.1s var(--cubic-bezier);
 }
 
 .card-container:hover {
-  transition: all 0.2s var(--cubic-bezier);
-  box-shadow: 0 0 8px 0 var(--dark-red);
+  transition: all 0.1s var(--cubic-bezier);
+  box-shadow: 0 0 8px 0 var(--dark-gray);
 }
 
 .card-image {
   object-fit: cover;
   width: 100%;
-  max-height: 100%;
+  max-height: 24rem;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 

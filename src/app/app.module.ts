@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +20,9 @@ import { DeleteMovieDialogComponent } from './shared/components/movie-dialog/del
 import { MatExpansionModule } from "@angular/material/expansion";
 import { DeleteRoomDialogComponent } from './shared/components/room-dialog/delete-room-dialog/delete-room-dialog.component';
 import { NewRoomDialogComponent } from './shared/components/room-dialog/new-room-dialog/new-room-dialog.component';
-
+import { NewSessionDialogComponent } from './shared/components/session-dialog/new-session-dialog/new-session-dialog.component';
+import { EditSessionDialogComponent } from './shared/components/session-dialog/edit-session-dialog/edit-session-dialog.component';
+import { DeleteSessionDialogComponent } from './shared/components/session-dialog/delete-session-dialog/delete-session-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,9 @@ import { NewRoomDialogComponent } from './shared/components/room-dialog/new-room
     DeleteMovieDialogComponent,
     DeleteRoomDialogComponent,
     NewRoomDialogComponent,
+    NewSessionDialogComponent,
+    EditSessionDialogComponent,
+    DeleteSessionDialogComponent,
   ],
   exports: [],
   imports: [
@@ -48,7 +52,7 @@ import { NewRoomDialogComponent } from './shared/components/room-dialog/new-room
     MatIconModule,
     MatDialogModule,
     MatButtonModule,
-    MatExpansionModule
+    MatExpansionModule,
   ],
   providers: [
     AuthService

@@ -1,9 +1,9 @@
-.new-movie-title {
+.new-session-title {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.new-movie-form {
+.new-session-form {
   font-size: 1.25rem;
   display: flex;
   flex-direction: column;

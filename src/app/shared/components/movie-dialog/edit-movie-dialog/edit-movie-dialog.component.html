@@ -1,4 +1,4 @@
-<h2 class="new-movie-title" mat-dialog-title>Adicionar novo filme</h2>
+<h2 class="new-movie-title" mat-dialog-title>Alterar filme</h2>
 <mat-dialog-content class="mat-typography">
   <form class="new-movie-form" [formGroup]="movieForm">
     <div class="input-container">
@@ -22,6 +22,6 @@
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button [disabled]="!movieForm.valid" mat-button (click)="editMovie()" cdkFocusInitial>Editar</button>
+  <button [disabled]="!movieForm.valid" mat-button (click)="editMovie()" cdkFocusInitial>Alterar</button>
   <button mat-button (click)="cancel()">Cancelar</button>
 </mat-dialog-actions>

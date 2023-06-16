@@ -1,10 +1,10 @@
 export type Session = {
-  id: string
+  id?: string
   roomNumber: number
   sits: string[]
   time: Date
   movieId: string,
   movieName: string,
-  createdAt: Date
-  updatedAt: Date
+  createdAt?: Date
+  updatedAt?: Date
 }

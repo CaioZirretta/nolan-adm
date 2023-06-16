@@ -29,7 +29,7 @@ export class NewRoomDialogComponent implements OnInit {
     });
   }
 
-  addRoom() {
+  protected addRoom() {
     this.errorMessage = "";
 
     const room: Room = {
@@ -55,7 +55,7 @@ export class NewRoomDialogComponent implements OnInit {
     });
   }
 
-  cancel() {
+  protected cancel() {
     this.dialogRef.close();
     this.roomForm.reset();
   }

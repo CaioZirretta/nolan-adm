@@ -16,8 +16,17 @@ import {
   DeleteRoomDialogComponent
 } from "../../shared/components/room-dialog/delete-room-dialog/delete-room-dialog.component";
 import { NewRoomDialogComponent } from "../../shared/components/room-dialog/new-room-dialog/new-room-dialog.component";
-import { FusoHorario } from "../../shared/utils/FusoHorario";
 import { Session } from "../../shared/types/Session";
+import {
+  NewSessionDialogComponent
+} from "../../shared/components/session-dialog/new-session-dialog/new-session-dialog.component";
+import {
+  EditSessionDialogComponent
+} from "../../shared/components/session-dialog/edit-session-dialog/edit-session-dialog.component";
+import {
+  DeleteSessionDialogComponent
+} from "../../shared/components/session-dialog/delete-session-dialog/delete-session-dialog.component";
+import { DateUtils } from "../../shared/utils/DateUtils";
 
 @Component({
   selector: 'app-home',
@@ -73,9 +82,38 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  protected editSession(session: Session) {}
+  protected addSession(room: Room) {
+    const dialogRef = this.dialog.open(NewSessionDialogComponent,{
+      data: room
+    });
+    this.lockBody();
 
-  protected deleteSession(session: Session) {}
+    dialogRef.afterClosed().subscribe(() => {
+      this.unlockBody();
+    })
+  }
+
+  protected editSession(session: Session) {
+    const dialogRef = this.dialog.open(EditSessionDialogComponent,{
+      data: session
+    });
+    this.lockBody();
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.unlockBody();
+    })
+  }
+
+  protected deleteSession(session: Session) {
+    const dialogRef = this.dialog.open(DeleteSessionDialogComponent,{
+      data: session
+    });
+    this.lockBody();
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.unlockBody();
+    })
+  }
 
   protected isSessionlessRoom(room: RoomWithSession) {
     return (room.sessions.length===0);
@@ -84,11 +122,11 @@ export class HomeComponent implements OnInit {
   protected formatDateToView(date: Date) {
     const dateObject = new Date(date);
 
-    const day = dateObject.getDate();
-    const month = dateObject.getMonth() + 1;
+    const day = (dateObject.getDate()).toString().padStart(2,"0");
+    const month = (dateObject.getMonth() + 1).toString().padStart(2,"0");
     const year = dateObject.getFullYear();
-    const hours = dateObject.getHours() + FusoHorario;
-    const minutes = dateObject.getMinutes();
+    const hours = (dateObject.getHours() + DateUtils.TimeZone).toString().padStart(2,"0");
+    const minutes = (dateObject.getMinutes()).toString().padStart(2,"0");
 
 
     const dateView: string = `${day}/${month}/${year} - ${hours}:${minutes}`;

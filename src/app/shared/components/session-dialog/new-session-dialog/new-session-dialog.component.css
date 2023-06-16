@@ -29,25 +29,6 @@ input[type="file"] {
   display: none;
 }
 
-.form-banner {
-  font-size: 1rem;
-  color: var(--dark-red);
-  border: 2px solid var(--dark-red);
-  border-radius: 4px;
-  background-color: var(--white);
-  padding: 0.25rem 0;
-  width: 74%;
-  cursor: pointer;
-  text-align: center;
-  transition: all 0.2s var(--cubic-bezier);
-}
-
-.form-banner:hover {
-  transition: all 0.2s var(--cubic-bezier);
-  color: var(--white);
-  background-color: var(--dark-red);
-}
-
 .form-error {
   color: var(--red);
   text-align: center;

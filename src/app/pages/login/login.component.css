@@ -4,9 +4,6 @@
 /*}*/
 
 .login-section {
-}
-
-.login-section {
   font-family: "Tsukimi-Bold", sans-serif;
   margin: unset;
   display: flex;
@@ -25,7 +22,8 @@
 
 .form-login-header {
   align-self: flex-start;
-  margin-left: 2rem;
+  margin-left: 5%;
+  margin-top: 5%;
 }
 
 .form-login {
@@ -39,6 +37,7 @@
 .form-login-title {
   margin-bottom: unset;
 }
+
 .form-login-subtitle {
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -81,7 +80,7 @@
   border: 1px solid var(--light-gray);
   border-radius: var(--border-radius);
   cursor: pointer;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.25);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
   transition: background-color .3s;
 }
 
@@ -92,7 +91,25 @@
 }
 
 .copyright {
-  font-size: .75rem;
   align-self: flex-start;
   margin: 2rem;
+}
+
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .form-login-label,
+  input {
+    font-size: 1.25rem;
+  }
+
+  .copyright {
+    font-size: 1rem;
+  }
+
+  .form-login-error {
+    font-size: 1rem;
+  }
 }

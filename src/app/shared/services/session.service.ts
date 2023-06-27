@@ -25,13 +25,16 @@ export class SessionService {
   }
 
   searchById(id: string): Observable<Session[]>{
-    return this.httpClient.get<Session[]>(`${this.url}/${id}`, this.headers);
+    return this.httpClient.get<Session[]>(`${this.url}/?id=${id}`, this.headers);
 
   }
 
   searchByRoom(roomNumber: number): Observable<Session[]>{
-    return this.httpClient.get<Session[]>(`${this.url}/room/${roomNumber}`, this.headers);
+    return this.httpClient.get<Session[]>(`${this.url}/room/?roomNumber=${roomNumber}`, this.headers);
+  }
 
+  searchByMovieName(name: string): Observable<Session[]>{
+    return this.httpClient.get<Session[]>(`${this.url}/movie/?movieName=${name}`)
   }
 
   add(session: Session): Observable<Session> {

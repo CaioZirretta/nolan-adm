@@ -8,6 +8,7 @@ import { MovieService } from "../../../services/movie.service";
 import { Session } from "../../../types/Session";
 import { catchError, throwError } from "rxjs";
 import { Message } from "../../../enums/Message";
+import { DateUtils } from "../../../utils/DateUtils";
 
 @Component({
   selector: 'app-edit-session-dialog',
@@ -46,7 +47,7 @@ export class EditSessionDialogComponent implements OnInit {
       id: this.session.id,
       roomNumber: this.session.roomNumber,
       sits: [],
-      time: this.sessionForm.controls['time'].value,
+      time: this.formatDate(this.sessionForm.controls['time'].value),
       movieId,
       movieName: this.sessionForm.controls['movieName'].value,
       updatedAt: new Date(),
@@ -66,6 +67,14 @@ export class EditSessionDialogComponent implements OnInit {
       this.dialogRef.close();
       this.sessionForm.reset();
     });
+  }
+
+  private formatDate(date: Date): Date {
+    const formatted = new Date(date);
+    formatted.setSeconds(0);
+    formatted.setMilliseconds(0);
+    formatted.setHours(formatted.getHours() - DateUtils.TimeZone);
+    return formatted;
   }
 
   protected cancel() {

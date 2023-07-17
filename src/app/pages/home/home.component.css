@@ -5,6 +5,10 @@
   height: 100%;
 }
 
+.home-title{
+  margin-top: 0;
+}
+
 /* Filmes */
 .add-container {
   display: grid;

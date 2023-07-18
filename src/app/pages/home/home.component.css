@@ -19,7 +19,7 @@
 
 .add-button {
   font-size: 1.25rem;
-  color: var(--light-gray);
+  color: #000;
   padding: .25rem;
   grid-area: 1 / 9 / 2 / 11;
   background-color: var(--white);

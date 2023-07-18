@@ -6,8 +6,9 @@
   margin: 0.5rem;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
   transition: all 0.1s var(--cubic-bezier);
-  cursor: pointer;
+  height: 20rem;
 }
+
 
 .card-container:hover {
   transition: all 0.1s var(--cubic-bezier);
@@ -17,15 +18,15 @@
 .card-image {
   object-fit: cover;
   width: 100%;
-  max-height: 24rem;
+  height: 16rem;
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .card-info {
-  height: 2rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
-  padding: 1rem 1rem 0;
+  padding: 0 1rem 0;
   align-items: center;
 }
 
@@ -43,7 +44,22 @@
   gap: .25rem;
   position: relative;
   justify-content: flex-end;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem .5rem;
+}
+
+.card-button {
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.25);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s cubic-bezier(.28,.77,.9,.29);
+}
+
+.card-button:hover {
+  transition: all 0.1s cubic-bezier(.28,.77,.9,.29);
+  box-shadow: 0 0 1px 1px #000;
 }
 
 .room-option-button {
@@ -71,13 +87,13 @@
   }
 
   .mat-icon {
-    font-size: .75rem;
+    font-size: 1.25rem;
   }
 }
 
 @media screen and (min-width: 1919px) {
   .mat-icon {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
 }
 

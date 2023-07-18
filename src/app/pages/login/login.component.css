@@ -90,6 +90,12 @@
   cursor: wait;
 }
 
+.form-login-create-user{
+  font-size: .75rem;
+  text-align:center;
+  cursor: pointer;
+}
+
 .copyright {
   align-self: flex-start;
   margin: 2rem;

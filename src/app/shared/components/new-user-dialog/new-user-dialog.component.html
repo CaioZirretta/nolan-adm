@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Novo Usuário</h2>
+<mat-dialog-content class="mat-typography">
+  <form class="new-user-form" [formGroup]="userForm">
+    <div class="input-container">
+      Nome:
+      <input class="form-name" formControlName="username" type="text">
+    </div>
+    <div class="input-container">
+      Senha:
+      <input class="form-password" formControlName="password" type="password">
+    </div>
+    <span class="form-error">{{errorMessage}}</span>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button [disabled]="!userForm.valid" mat-button (click)="addUser()" cdkFocusInitial>Criar</button>
+  <button mat-button (click)="cancel()">Cancelar</button>
+</mat-dialog-actions>

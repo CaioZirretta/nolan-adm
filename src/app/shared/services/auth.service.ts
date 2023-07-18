@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { LoginResponse } from "../types/Login";
 import { CookieService } from "ngx-cookie-service";
 import jwtDecode from 'jwt-decode';
+import { CreateUser } from "../types/User";
 
 
 
@@ -11,7 +12,8 @@ import jwtDecode from 'jwt-decode';
   providedIn: 'root'
 })
 export class AuthService {
-  private url = 'http://localhost:3333/login';
+  private urlLogin = 'http://localhost:3333/login';
+  private urlUser = 'http://localhost:3333/user';
 
   constructor(private http: HttpClient,
               private cookieService: CookieService) {
@@ -20,7 +22,11 @@ export class AuthService {
   login(username: string, password: string): Observable<LoginResponse> {
     const body = { username, password };
 
-    return this.http.post<LoginResponse>(this.url, body);
+    return this.http.post<LoginResponse>(this.urlLogin, body);
+  }
+
+  create(user: CreateUser): Observable<void>{
+    return this.http.post<void>(this.urlUser, user);
   }
 
   isAuthenticated(): boolean {

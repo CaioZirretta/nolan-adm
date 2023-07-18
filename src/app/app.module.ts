@@ -23,6 +23,7 @@ import { NewRoomDialogComponent } from './shared/components/room-dialog/new-room
 import { NewSessionDialogComponent } from './shared/components/session-dialog/new-session-dialog/new-session-dialog.component';
 import { EditSessionDialogComponent } from './shared/components/session-dialog/edit-session-dialog/edit-session-dialog.component';
 import { DeleteSessionDialogComponent } from './shared/components/session-dialog/delete-session-dialog/delete-session-dialog.component';
+import { NewUserDialogComponent } from './shared/components/new-user-dialog/new-user-dialog.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DeleteSessionDialogComponent } from './shared/components/session-dialog
     NewSessionDialogComponent,
     EditSessionDialogComponent,
     DeleteSessionDialogComponent,
+    NewUserDialogComponent,
   ],
   exports: [],
   imports: [

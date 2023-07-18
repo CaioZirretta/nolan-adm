@@ -24,9 +24,9 @@ export class NewMovieDialogComponent implements OnInit {
 
   ngOnInit() {
     this.movieForm = this.formBuilder.group({
-      name: ['teste', [Validators.required]],
-      synopis: ['teste', [Validators.required]],
-      synopsisExpanded: ['teste', [Validators.required]],
+      name: ['', [Validators.required]],
+      synopis: ['', [Validators.required]],
+      synopsisExpanded: ['', [Validators.required]],
       banner: ['', [Validators.required]],
     });
   }

@@ -1,10 +1,12 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../../shared/services/auth.service";
 import { catchError, finalize, tap, throwError } from "rxjs";
 import { Router } from "@angular/router";
 import { CookieService } from "ngx-cookie-service";
 import { animate, state, style, transition, trigger } from "@angular/animations";
+import { MatDialog } from "@angular/material/dialog";
+import { NewUserDialogComponent } from "../../shared/components/new-user-dialog/new-user-dialog.component";
 
 
 @Component({
@@ -27,7 +29,8 @@ export class LoginComponent implements OnInit {
   errorMessage: string = "";
   loginForm: FormGroup;
 
-  constructor(private elementRef: ElementRef,
+  constructor(public dialog: MatDialog,
+              private elementRef: ElementRef,
               private formBuilder: FormBuilder,
               private authService: AuthService,
               private router: Router,
@@ -40,8 +43,8 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.loginForm = this.formBuilder.group({
-      username: [''],
-      password: ['']
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
 
@@ -74,5 +77,27 @@ export class LoginComponent implements OnInit {
 
   private handleError(error: Error): void {
 
+  }
+
+  protected createUser(): void{
+    const dialogRef = this.dialog.open(NewUserDialogComponent)
+
+    this.lockBody();
+
+    dialogRef.afterClosed().subscribe(() => {
+      this.unlockBody();
+    })
+  }
+
+  private lockBody() {
+    const body = this.elementRef.nativeElement.ownerDocument.body;
+    body.style.pointerEvents = 'none';
+    body.style.overflow = 'hidden';
+  }
+
+  private unlockBody() {
+    const body = this.elementRef.nativeElement.ownerDocument.body;
+    body.style.pointerEvents = 'all';
+    body.style.overflow = 'visible';
   }
 }

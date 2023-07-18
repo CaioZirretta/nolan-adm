@@ -48,6 +48,7 @@
           </ng-container>
           <ng-template #no_sessions_content>
             <div class="no-sessions-found"> Nenhuma sessão encontrada</div>
+            <mat-icon class="new-session-button" (click)="addSession(room)" fontIcon="add"/>
           </ng-template>
         </mat-expansion-panel>
       </div>

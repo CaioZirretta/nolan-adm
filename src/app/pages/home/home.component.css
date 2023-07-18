@@ -21,13 +21,13 @@
   font-size: 1.25rem;
   color: var(--light-gray);
   padding: .25rem;
-  grid-area: 1 / 8 / 2 / 11;
+  grid-area: 1 / 9 / 2 / 11;
   background-color: var(--white);
   border-radius: var(--border-radius);
   border: 2px solid var(--light-gray);
   cursor: pointer;
   transition: all .1s var(--cubic-bezier);
-  height: 4rem;
+  height: 3rem;
 }
 
 .add-button:hover {
